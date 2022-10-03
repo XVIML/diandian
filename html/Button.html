@@ -1,0 +1,66 @@
+<html>
+<body>
+<br>
+<h4 style="color: brown">DPPython Useages</h4>
+<center><h2 style="color: blue">Button Widget</h2></center>
+<p>
+Button is most commonly used GUI widget. It can receive user's mouse input and turn it into a event stream. By bind the event stream to a callback function or another widget, user can let the program do a designed work. Below is a Button in GUI.
+</p>
+<center><img border="0" src="Button001.png" ></center>
+<p>
+You can insert a Button widget in the GUI by:
+</p>
+<p>
+hl=dr.DRButtonX(win,x,y,w,h,bg,fg,title,fsize,ID)
+</p>
+<p>
+where hl is the handle of returned Button widget. win is the handle of GUI, (x,y,w,h) is the insert position, (bg,fg) is the background color and foreground color, fsize is the fontsize of title, and ID is the key value. Below is a sample codes. 
+</p>
+<p>
+mBut1=dr.DRButtonX(win,127,30,100,40,'#00aacc','#eeee00','Button1',12,101)
+</p>
+<p>
+You can bind a callback function or a set method of another widget to the button's event stream, by��
+</p>
+<p>
+hl.addCallBackSingle(setValueSingle)
+</p>
+<p>
+The setValueSingle function is defined as: 
+</p>
+<p>
+def setValueSingle(v):
+</p>
+When the button is pressed, the binded callback function will receive the key value of the button.</p>
+<p>
+Button Widget is a wrap of Tkinter Button widget, so you can set it by Tkinter Button's method. For example, you can change the border of the button to 10 pixels. 
+</>
+<p>
+hl.ax.config(bd=10)
+</p>
+<p>
+It look like this:
+</p>
+<img border="0" src="Button002.png" >
+<p>
+For Tkinter Button, you can use configure function to change its looklike. These setting include:
+</p>
+<p>
+text='Title'<br>
+bg='#Background color code'<br>
+fg='#Text color code'<br>
+activebackground='#active backgrounf color code'<br>
+activeforeground='#active text color code'<br>
+relief='Border Style name'(flat、sunken、raised、groove、ridge、solid)<br>
+bd=Border Pixels<br>
+font=('Name',pixels)<br>
+</p>
+<p>
+See Tkinter Button widget for more detial.
+</p>
+<p>.</p>
+<p>
+2022/10/03
+</p>
+</body>
+</html>
