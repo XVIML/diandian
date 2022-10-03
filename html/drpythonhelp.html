@@ -1,0 +1,293 @@
+<html>
+<body>
+<br>
+<h2 style="color: red">How to use DRPython</h2>
+<h3 style="color: Brown">1. Introduction</h3>
+<p>
+DRPython is an APP designer which is based on  IDLE and Tkinter of Python. It is a little like Matlab's APP Designer. You can drag widgets to the layout area to fuifil a GUI design, and export it to a python frame program. 
+</p>
+<p>
+<img border="0" src="drpy001.jpg"  >
+</p>
+<p>
+This is the python frame program that is exported by DRPython.
+</p>
+<p>
+<img border="0" src="drpy002.png"  >
+</p>
+<p>
+The frame program can run directly. 
+</p>
+<p>
+<img border="0" src="drpy003.png"  >
+</p>
+<p>
+In the base of the frame program, you can design a program that can do some signal processing very quickly. Below is a APP of signal waveform and spectrum
+</p>
+<p>
+<img border="0" src="drpy004.png"  >
+</p>
+<p>
+Before to use DRPython, you need to intall some third packages for your python.
+</p>
+<p>
+1) pip install numpy<br>               
+2) pip install scipy<br>
+3) pip install matplotlib<br>
+4) pip install simpleaudio<br>
+5) pip install PyAudio<br>
+6) pip install Pyserial<br>
+</p>
+<p>
+And most important, to install drvi, a group of virtual instrument widget, which is a part of DRPython.
+</p>
+<p>
+pip install drvi
+</p>
+<p>.</p>
+<h3 style="color: Brown">2. Menu</h3>
+<img border="0" src="drpy005.png"  >
+<h3 style="color: blue">2.1) File</h3>
+<h4 style="color: green">2.1.1) New GUI</h4>
+<p>
+Create a new GUI layout, and this operation will delete current layout !
+</p>
+<h4 style="color: green">2.1.2) Open a GUI layout file</h4>
+<p>
+Open a txt layout file, and this operation will delete current layout !
+</p>
+<h4 style="color: green">2.1.3) Save GUI to a layout file</h4>
+<p>
+Save the current GUI design to a  txt layout file.
+</p>
+<h4 style="color: green">2.1.4) Export GUI to Python</h4>
+<p>
+Export the current GUI to a frame Python program. In the base of frame program, a real program can be finished very quickly by adding callback functions to widgets, 
+</p>
+<h4 style="color: green">2.1.5) Export a proportional GUI to Python</h4>
+<p>
+Export the current GUI in a proportional way to a frame Python program. In the base of frame program, a real program can be finished very quickly by adding callback functions to widgets, 
+</p>
+<h4 style="color: green">2.1.6) Export GUI to Python Class</h4>
+<p>
+Export the current GUI to a Python class that can be used as a block inside a python program. By adding callback functions for each widgets in the class, the class will work like a indivial applet int the program that call it. 
+</p>
+<h4 style="color: green">2.1.7) Edit Python App</h4>
+<p>
+Start the IDLE python editor to compile a python program.
+</p>
+<h4 style="color: green">2.1.8) Python Command Window</h4>
+<p>
+Start a python command wind, which can execute python codes directly.
+</p>
+<h4 style="color: green">2.1.9) Close</h4>
+<p>
+Close DRPython app designer.
+</p>
+<h3 style="color: blue">2.2) Edit</h3>
+<h4 style="color: green">2.2.1) Insert widgets</h4>
+<p>
+To insert mode, you can add widgets by draging them from the right side.
+</p>
+<h4 style="color: green">2.2.2) Delete widgets</h4>
+<p>
+To delete mode, you can delete a widgets by clicking on it.
+</p>
+<h4 style="color: green">2.2.3) APP Preview</h4>
+<p>
+Preview the current GUI layout in an APP working form.
+</p>
+<h4 style="color: green">2.2.4) Codes Preview</h4>
+<p>
+Preview the current GUI layout in an APP codes form.
+</p>
+<h3 style="color: blue">2.3) APP Samples</h3>
+<p>
+The best way to know DRPython is by what it has finished. So, some sample programs are given here. Through of them, you can know how to use DRPython and drvi package in signal processing APP design.
+<p>
+MIC recording<br>
+WAV playing<br>
+SineWave and Piano<br>
+Signal waveform and spectrum<br>
+Roles of Window function<br>
+Load and save signals<br>
+How to use APP Class<br>
+</p>
+<h3 style="color: blue">2.4) Tools</h3>
+<h4 style="color: green">2.4.1) MP3 to WAV(By ffmpeg)</h4>
+<p>
+Python can only read audio file of WAV format. So, DRPython call ffmpeg in the background to turn a MP3 file into a WAV file. But you need to install ffmpeg and change the path to your ffmpeg path.
+</p>
+<p>
+fPath=winDir+'\\ffmpeg511'   ---like->    fpath='D:\\ffmpeg'
+</p>
+<h4 style="color: green">2.4.2) MP4 get WAV(By ffmpeg)</h4>
+<p>
+Get audio data from a MP4 file.
+</p>
+<h4 style="color: green">2.4.3) Play MP3(By ffmpeg)</h4>
+<p>
+Check whether a MP3 file can play. If so, the DR.playX widget can be used in the APP to get audio data from a playing MP3 file.
+</p>
+<h4 style="color: green">2.4.4) Play MP4(By ffmpeg)</h4>
+<p>
+Check whether a MP4 file can play. If so, the DR.playX widget can be used in the APP to get audio data from a playing MP4 file.
+</p>
+<h4 style="color: green">2.4.5) Color code</h4>
+<p>
+In most of times, the drvi package use a color code to set the color. You can select a color and get its color code. Link, Red='#ff0000'
+</p>
+<h4 style="color: green">2.4.6) COM List</h4>
+<p>
+List COM port aviable now. An serial widget is supplied in the drvi package, it can turn a cheap arduino card into a four channels A/D card. 
+</p>
+<h3 style="color: blue">2.5) About</h3>
+<h4 style="color: green">2.5.1) About DRPython</h4>
+<h4 style="color: green">2.5.2) Helps</h4>
+<p>.</p>
+<h3 style="color: Brown">3 Tool Bar</h3>
+<img border="0" src="drpy006.png"  >
+<h4 style="color: green">3.1) New GUI</h4>
+<p>
+Create a new GUI layout, and this operation will delete current layout !
+</p>
+<h4 style="color: green">3.2) Open a GUI layout file</h4>
+<p>
+Open a txt layout file, and this operation will delete current layout !
+</p>
+<h4 style="color: green">3.3) Save GUI to a layout file</h4>
+<p>
+Save the current GUI design to a  txt layout file.
+</p>
+<h4 style="color: green">3.4) Export GUI to Python</h4>
+<p>
+Export the current GUI to a frame Python program. By adding callback functions for each widgets, a real program can be finished very quickly. 
+</p>
+<h4 style="color: green">3.5) Export a proportional GUI to Python</h4>
+<p>
+Export the current GUI in a proportional way to a frame Python program. By adding callback functions for each widgets, a real program can be finished very quickly. 
+</p>
+<h4 style="color: green">3.6) Export GUI to Python Class</h4>
+<p>
+Export the current GUI to a Python class that can be used as a block inside a python program. By adding callback functions for each widgets in the class, the class will work like a indivial applet int the program that call it. 
+</p>
+<h4 style="color: green">3.7) Edit Python App</h4>
+<p>
+Start the IDLE python editor to compile a python program.
+</p>
+<h4 style="color: green">3.8) Insert widgets</h4>
+<p>
+To insert mode, you can add widgets by draging them from the right side.
+</p>
+<h4 style="color: green">3.9) Delete widgets</h4>
+<p>
+To delete mode, you can delete a widgets by clicking on it.
+</p>
+<h4 style="color: green">3.10) Color code</h4>
+<p>
+In most of times, the drvi package use a color code to set the color. You can select a color and get its color code. Link, Red='#ff0000'
+</p>
+<h4 style="color: green">3.11) APP Preview</h4>
+<p>
+Preview the current GUI layout in an APP working form.
+</p>
+<h4 style="color: green">3.12) Codes Preview</h4>
+<p>
+Preview the current GUI layout in an APP codes form.
+</p>
+<h4 style="color: green">3.13) Python Command Window</h4>
+<p>
+Start a python command wind, which can execute python codes directly.
+</p>
+<h4 style="color: green">3.14) About DRPython</h4>
+<h4 style="color: green">3.15) Helps</h4>
+<p>.</p>
+ <h3 style="color: Brown">4 Property Bar</h3>
+<img border="0" src="drpy007.png"  >
+<p>
+The property bar can be used to change title, position, background color and foreground color of a widget. As shown below. 
+</p>
+<img border="0" src="drpy008.png"  >
+<p>.</p>
+ <h3 style="color: Brown">5 Widget List</h3>
+<img border="0" src="drpy009.png"  >
+<p>
+The widget list can be used to select widgets you need. Select one by click on it, then drag it to where you wanted.
+</p>
+<img border="0" src="drpy00a.png"  >
+<p>
+Right click on the selected widget, a help page will show and tell you how to use this widget.
+</p>
+<img border="0" src="drpy00b.png"  >
+<h3 style="color: Brown">5 Design Steps</h3>
+<p>
+5.1) Create a new layout file<br>
+5.2) Drag widgets to the layout area, then adjust their position,szie and color.<br>
+5.3) Save the design to a layout file for later use.<br>
+5.4) Export the GUI design to an APP frame or an APP class<br>
+5.5) Start IDLE python editor to edit the APP frame or an APP class that is generated by DRPython<br>
+</p>
+<h3 style="color: Brown">6 Event Driven and Data Driven Programming</h3>
+<p>
+A event driven and data driven architecture is includeed in the drvi package, which means a APP that is consist of drvi widgets and their callback functions can be driven by an event stream or a data stream.
+</p>
+<p>
+For example, if we add the set method of a gauge to the output event of a knob. When we turn the knob, the value of gauge will change with it. And If we add a callback function to the output event of a knob, the callback function will be executed when the knob change. So the program is driven by the event driven
+</p>
+<img border="0" src="drpy00c.png"  >
+<p>
+Below is a data driven example. When we start the WAV player widget, it will generate an audio data stream, and driven the callback function bind to it to work. So we can see the waveform and spectrum change with playing.
+</p>
+<img border="0" src="drpy00d.png"  >
+<p>
+You pay most attenations on the callback function of signal processing and only a few addCallBack function is used to link event streams and data stream. Below is the main codes of WAV player. Only two sentences to fuiful event stream and data stream binding.
+</p>
+<img border="0" src="drpy00e.png"  >
+<p>.</p>
+<h3 style="color: Brown">7 Sample Programs</h3>
+<p>
+Six sample program are given out. From source codes of these programs, you can understand what is the drvi package, and can know how to use various virtual instrument widgets in the drvi package.
+</p>
+<h4 style="color: green">7.1) MIC recording</h4>
+<p>
+A program that show how to get audio data from MIC and to draw its waveform.
+</p>
+<img border="0" src="drpy00f.png"  >
+<h4 style="color: green">7.2) WAV playing</h4>
+<p>
+A program that show how to play WAV file and get audio data to do signal processing.
+</p>
+<img border="0" src="drpy00g.png"  >
+<h4 style="color: green">7.3) SineWave and Piano</h4>
+<p>
+A program that show how to generate sine waves and play it like a piano.
+</p>
+<img border="0" src="drpy00h.png"  >
+<h4 style="color: green">7.4) Signal waveform and spectrum</h4>
+<p>
+A program that generate four typical signal, sine wave, square wave, sawtooth wave and white noise, and draw their waveform and spectrum. 
+</p>
+<img border="0" src="drpy00i.png"  >
+<h4 style="color: green">7.5) Roles of Window function</h4>
+<p>
+A program that show roles of window function in FFT spectrum.
+</p>
+<img border="0" src="drpy00j.png"  >
+<h4 style="color: green">7.5) Load and save signals</h4>
+<p>
+A program that show how to save signal to a numpy variable file and then load it back.
+</p>
+<img border="0" src="drpy00k.png"  >
+<h4 style="color: green">7.6) How to use APP Class</h4>
+<p>
+A program that show what is a APP class and how to use it inside a program.
+</p>
+<img border="0" src="drpy00l.png"  >
+<p>
+.
+</p>
+<p>
+2022/10/03 in HUST, China
+<p>
+</body>
+</html>
