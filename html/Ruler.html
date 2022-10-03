@@ -1,0 +1,32 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">棒图控件</h2>
+<p>
+棒图控件主要用于指示某个参数的值，如温度、压力等，其图形显示效果如下：
+</p>
+<p>
+<img border="0" src="Ruler001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个棒图控件的命令为:
+</p>
+<p>
+hl=dr.DRRuler(win,x,y,w,h,cb,cf1,cf2,cf3,cf4,text6,fontsize,min,max,initvalue)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。棒图控件有2个属性函数，可用于设定和获取棒图的当前值。
+</p>
+<p>
+hl.setValueSingle(v)<br>
+v=hl.getValueSingle()<br>
+</p>
+<p>
+棒图控件是从Tkinter的Canvas控件继承而来，因此必要时也可以通过Tkinter_Canvas控件的属性和方法来对其进行装饰。
+</p>
+<p>
+更多有关Tkinter_Canvas控件的详细用法请参阅Tkinter文献。
+</p>
+<p>.</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">SemilogX二维曲线控件</h2>
+<p>
+SemilogX二维曲线控件的X坐标采用对数形式，也就是log10(x)，主要用于显示频谱等二维曲线，其图形显示效果如下：
+</p>
+<p>
+<img border="0" src="SemilogX001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个SemilogX二维曲线控件的命令为:
+</p>
+<p>
+hl=dr.DRSemilogXX(win,x,y,w,h,title,cb1,cb2,cf1,cf2,cf3,xmin,xmax,ymin,ymax,xdata,ydata)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。当xmin,xmax均设为零时，x轴采用自动量程。当ymin,ymax均设为零时，y轴采用自动量程。当xdata和ydata设为零，则初始曲线为空。Plot二维曲线控件有6个属性函数。
+</p>
+<p>
+hl.setXlim(xmin,xmax) #设定X轴显示范围<br>
+hl.setYlim(ymin,ymax) #设定Y轴显示范围<br>
+hl.setValue2D(x,y)#以覆盖形式绘制曲线<br>
+hl.addValue2D(x,y)#以添加形式绘制曲线<br>
+</p>
+<p>
+SemilogX二维曲线控件继承至Tkinter的Frame控件和Matplotlib的SemilogX函数，必要时可参阅相关资料。
+</p>
+<p>.</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">文本控件</h2>
+<p>
+文本控件可用于显示多行文字或数字，其显示的图形显示效果如下：
+</p>
+<p>
+<img  src="Text001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个文本控件的命令为:
+</p>
+<p>
+hl=dr.dr.DRTextX(win,x,y,w,h,bg,fg,txt,fontsize)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。标签控件有2个属性函数，可用于设定其所显示的文字或数字，也可以用于获取其所显示的文字或数字。
+</p>
+<p>
+hl.setValueString(txt)<br>
+txt=hl.getValueString()<br>
+</p>
+<p>
+文本控件是从Tkinter的Text控件继承而来，因此必要时还可以通过Tkinter_Text控件的属性和方法来对其进行装饰。例如，下面语句将已创建的标签控件的背景色设为粉红色。
+</p>
+<p>
+hl.ax.config(bg='#ffeeee')
+</p>
+<p>
+显示效果为：
+</p>
+<p>
+<img src="Text002.png" >
+</p>
+<p>
+更多有关Tkinter_Text控件的详细用法请参阅Tkinter文献。
+</p>
+<p>.</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">PlotPolar二维曲线控件</h2>
+<p>
+PlotBar二维曲线控件主要用于显示极坐标形式的二维曲线，其图形显示效果如下：
+</p>
+<p>
+<img border="0" src="PlotPolar001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个PlotPolar二维曲线控件的命令为:
+</p>
+<p>
+hl=dr.DRPlotPolarX(win,x,y,w,h,title,cb1,cf1,cf2,cf3,title,aData,rData)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。PlotPolar二维曲线控件有2个属性函数。
+</p>
+<p>
+hl.setValue2D(adata,rdata)#以覆盖形式绘制曲线<br>
+hl.addValue2D(adata,rdata)#以添加形式绘制曲线<br>
+</p>
+<p>
+PlotPolar二维曲线控件继承至Tkinter的Frame控件和Matplotlib的plotpolar函数，必要时可参阅相关资料。
+</p>
+<p>.</p>
+</body>
+</html>

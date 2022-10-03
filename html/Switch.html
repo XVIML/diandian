@@ -1,0 +1,32 @@
+<html>
+<body>
+<br>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<center><h2 style="color: blue">开关按钮控件</h2></center>
+<p>
+开关按钮的作用与一个开关相似，可用于接收用户的鼠标点击输入，其输出值在0/1两态间变换，然后通过回调函数形式编程定义其具体功能和操作。开关按钮控件的图形显示效果如下：
+</p>
+<center><img border="0" src="Switch001.png" ></center>
+<p>
+在Python程序GUI界面中创建一个按钮控件的命令为:
+<p>
+hl=dr.DRSwitch(win,x,y,w,h,bg,fg)
+</p>
+其中hl是创建时用户设定的变量名。按钮控件可以通过回调函数绑定的方式将用户的鼠标点击操作传递给绑定的回调函数，格式为：
+<p>
+hl.addCallBackSingle(setValueSingle)
+</p>
+被绑定的回调函数是一个单数值函数，收到的是开关按钮的状态值0或1，其函数形式为：
+<p>
+def setValueSingle(v):
+</p>
+通过回调函数绑定方式，就可以将用户的鼠标点击操作传递到程序的回调函数中。
+</p>
+<p>
+开关按钮控件是从Tkinter的Canvas控件继承而来，还可以按Canvas控件的属性和方法来对其进行装饰。
+</p>
+<p>
+有关Tkinter Canvas控件的详细用法请参阅Tkinter文献。
+</p>
+</body>
+</html>

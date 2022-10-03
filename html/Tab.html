@@ -1,0 +1,36 @@
+<html>
+<body>
+<br>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<center><h2 style="color: blue">页帧控件</h2></center>
+<p>
+页帧控件的作用是提供一个多页的页帧，可以在同一位置显示多个不同的页面，其图形显示效果如下：
+</p>
+<center><img border="0" src="Tab001.png" ></center>
+<p>
+在Python程序GUI界面中创建一个标准页帧控件的命令为:
+</p>
+<p>
+hl=dr.DRNoteBook(win,x,y,w,h,bg,bg1,fg,pagenumber)
+</p>
+<p>
+创建一个紧凑型页帧控件的命令为:
+</p>
+<p>
+hl=dr.DRTab(win,x0,y0,w,h,bg,bg1,fg,pageNumber,tabPosition)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。一个页帧控件可以提供多个不同页面来布置GUI和插入控件。例如，下面分别在第一页和第二页中各插入一个按钮：
+</p>
+<p>
+mB0=dr.DRButton(hl.win[0],40,40,100,36,'#00aacc','#000000','InPage0',1)<br>
+mB1=dr.DRButton(hl.win[1],60,60,100,36,'#aacc00','#000000','InPage1',1)<br>
+</p>
+<p>
+页帧控件有1个属性函数，可用于设定当前显示页面。
+</p>
+<p>
+hl.setPage(v)<br>
+</p>
+</body>
+</html>

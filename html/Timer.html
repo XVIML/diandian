@@ -1,0 +1,40 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">计时器控件</h2>
+<p>
+计时器控件提供一个按毫秒计时的模块，定时通过回调函数形式发出时钟事件，用户可编程定义其具体功能和操作，其图形显示效果如下：
+</p>
+<p>
+<img border="0" src="Timer001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个计时器控件的命令为:
+</p>
+<p>
+hl=dr.DRTimerX(win,x,y,w,h,cb,cf,waitTime,fontsize)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。计时器控件可以通过回调函数绑定的方式将定时中断事件传递给绑定的回调函数，格式为：
+</p>
+<p>
+hl.addCallBackSingle(setValueSingle)
+</p>
+<p>
+被绑定的回调函数是一个单数值函数，收到的是当前的中断计数值，其函数形式为：
+</p>
+<p>
+def setValueSingle(v):
+</p>
+<p>
+通过回调函数绑定方式，就可以将定时中断事件传递传递到程序的回调函数中。
+</p>
+<p>
+计时器控件有1个属性函数，可用于启动/停止计时器。
+</p>
+<p>
+hl.setValueSingle(0/1)<br>
+</p>
+<p>.</p>
+</body>
+</html>

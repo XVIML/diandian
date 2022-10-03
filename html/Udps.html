@@ -1,0 +1,40 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">UDP测量数据服务器控件</h2>
+<p>
+UDP测量数据服务器控件是建立一个最多支持4个独立端口的UDP服务器，通过UDP网络通讯，接收客户端程序通过网络传来的最多4个通道的测量数据；并可通过回调函数形式返回收到的网络测量信号，用户可编程定义后续的信号显示和信号处理操作。其图形显示效果如下：
+</p>
+<p>
+<img border="0" src="UDPs001.png" >
+</p>
+<p>
+UDP是一种非连接的网络通讯协议，在局域网内和小数据包传递的情况下，其应用比TCP方便。具体应用方法可参考软件包中的UDP网络测量程序(DRVIExample_UDPS和DRVIExample_UDPC)代码：
+</p>
+<p>
+<img border="0" src="UDPs002.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个UDP测量数据服务器控件的命令为:
+</p>
+<p>
+hl=drnet.DRUDPS(win,x,y,w,h,cb1,cb2,cf1,cf2,This_IP,port,chNumber,fontsize)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。UDP测量数据服务器控件可以通过回调函数绑定的方式将接收到的信号数据传递给绑定的回调函数，格式为：
+</p>
+<p>
+hl.addCallBack(setUDPDATA) 
+</p>
+<p>
+被绑定的回调函数是一个用于接收最多4通道采样数组的函数，其函数形式为：
+</p>
+<p>
+def setUDPDATA(ch,data,addr): 
+</p>
+<p>
+其中ch为接收信号的通道端口，data为接收到的信号的字节流。客户端发送信号时和服务器端接收信号时，字节流的定义形式应该统一。本例中是将信号处理为“xxx , xxx , xxx , xxx ,  ....”的Ascii码形式。
+</p>
+<p>.</p>
+</body>
+</html>
