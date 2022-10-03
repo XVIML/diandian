@@ -1,0 +1,45 @@
+<html>
+<body>
+<br>
+<h4 style="color: brown">DPPython Useages</h4>
+<h2 style="color: blue">Gradient Button Widget</h2>
+<p>
+Gradient Button Widget is a imporvement of button widget. It can receive user's mouse input and turn it into a event stream. By bind the event stream to a callback function or another widget, user can let the program do a designed work. Below is a Grident Button in GUI.
+</p>
+<center><img border="0" src="GButton001.png" ></center>
+<p>
+You can insert a gradient button widget in the GUI by:
+<p>
+hl=dr.DRGButton=(win,x,y,w,h,bg1,bg2,fg,R,Title,fSize,ID)
+</p>
+<p>
+where hl is the handle of returned Button widget. win is the handle of GUI, (x,y,w,h) is the insert position, (bg1,bg2,fg) is the background color and foreground color, fsize is the fontsize of title, and ID is the key value. Below is a sample codes. 
+</p>
+<p>
+mGBut1=dr.DRGButton(win,68,30,100,40,'#00ccaa','#eeee00','#000000',12,'GButton1',12,101)
+</p>
+<p>
+You can bind a callback function or a set method of another widget to the gradient button's event stream, by£º
+</p>
+<p>
+hl.addCallBackSingle(setValueSingle)
+</p>
+<p>
+The setValueSingle function is defined as: 
+</p>
+<p>
+def setValueSingle(v):
+</p>
+When the gradient button is pressed, the binded callback function will receive the key value of the gradient button.</p>
+<p>
+Gradient Button Widget is a wrap of Tkinter Canvas widget, so you can set it by Tkinter Canvas's method.
+</>
+<p>
+See Tkinter Canvas widget for more detial.
+</p>
+<p>.</p>
+<p>
+2022/10/03
+</p>
+</body>
+</html>
