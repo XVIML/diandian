@@ -1,0 +1,60 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">水平按钮组控件</h2>
+<p>
+水平按钮控件就是一组水平排列在一起的按钮控件，可用于接收用户的鼠标点击输入，然后通过回调函数形式编程定义其具体功能和操作，按钮组中相邻按钮的返回值差值为1。水平按钮的图形显示效果如下：
+</p>
+<img border="0" src="HBGr001.png" >
+<p>
+在Python程序GUI界面中创建一个水平按钮组控件的命令为:
+</p>
+<p>
+hl=dr.DRHButtonGroupX(win,x,y,w,h,bg,fg,'t1,t2,...,tN',N,fontsize,ID)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。水平按钮组控件可以通过回调函数绑定的方式将用户的鼠标点击操作传递给绑定的回调函数，格式为：
+</p>
+<p>
+hl.addCallBackSingle(setValueSingle)
+</p>
+<p>
+被绑定的回调函数是一个单数值函数，收到的是所点击按钮的ID值，其函数形式为：
+</p>
+<p>
+def setValueSingle(v):
+</p>
+<p>
+通过回调函数绑定方式，就可以将用户的鼠标点击操作传递到程序的回调函数中。
+</p>
+<p>
+水平按钮组控件是从Tkinter的Button控件继承而来，因此创建后还可以通过Tkinter_Button控件的属性和方法来对其进行进一步的装饰。例如，下面语句将已创建的水平按钮组中第2个按钮的背景色改为黑色，边框设为凹进。
+</p>
+<p>
+hl.ax[2].config(bg='#eecccc')
+<br>
+hl.ax[2].config(relief='sunken')
+</p>
+<p>
+显示效果为：
+</p>
+<img border="0" src="HBGr002.png" >
+<p>
+对于Tkinter_Button控件，可以通过configure函数配置的外形参数主要有：
+</p>
+<p>
+text='标签'<br>
+bg='#背景颜色码'<br>
+fg='#文本颜色码'<br>
+activebackground='#active时的背景颜色码'<br>
+activeforeground='#active的文字颜色码'<br>
+relief='边框的3D样式名'(flat、sunken、raised、groove、ridge、solid)<br>
+bd=边框宽度点数<br>
+font=('字体名',字体点数)<br>
+</p>
+<p>
+更多有关Tkinter_Button控件的详细用法请参阅Tkinter文献。
+</p>
+<p>.</p>
+</body>
+</html>

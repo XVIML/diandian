@@ -1,0 +1,40 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">列表选择控件</h2>
+<p>
+列表选择控件是将一组选项纵向排列在一起，供用户鼠标点击选择，然后通过回调函数形式编程定义其具体功能和操作，第一项返回值为0，其余不同选项的返回值差值为1。列表选择控件的图形显示效果如下：
+</p>
+<p>
+<img border="0" src="ListBox001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个列表选择控件的命令为:
+</p>
+<p>
+hl=dr.DRListBoxX(win,x,y,w,h,bg,fg,items,fontSize,num,initItem)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。列表选择控件可以通过回调函数绑定的方式将用户的鼠标点击操作传递给绑定的回调函数，格式为：
+</p>
+<p>
+hl.addCallBackSingle(setValueSingle)
+</p>
+<p>
+被绑定的回调函数是一个单数值函数，收到的是所选择的条目号，其函数形式为：
+</p>
+<p>
+def setValueSingle(v):
+</p>
+<p>
+通过回调函数绑定方式，就可以将用户的鼠标点击操作传递到程序的回调函数中。
+</p>
+<p>
+列表选择控件是从Tkinter的ListBox控件继承而来，因此必要时也可以通过Tkinter_ListBox控件的属性和方法来对其进行装饰。
+</p>
+<p>
+更多有关Tkinter_ListBox控件的详细用法请参阅Tkinter文献。
+</p>
+<p>.</p>
+</body>
+</html>

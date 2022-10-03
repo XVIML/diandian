@@ -1,0 +1,29 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">Plot3D三维曲线控件</h2>
+<p>
+Plot3D三维曲线控件主要用于在三维空间内显示信号曲线，其图形显示效果如下：
+</p>
+<p>
+<img border="0" src="Plot3D001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个Plot3D三维曲线控件的命令为:
+</p>
+<p>
+hl=dr.DRPlot3D(win,x,y,w,h,title,xData,yData,zData)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。当xdata、ydata、zdata设为零，则初始曲线为空。Plot3D三维曲线控件有2个属性函数。
+</p>
+<p>
+hl.setValue3D(x,y,z)#以覆盖形式绘制曲线<br>
+hl.addValue3D(x,y,z)#以添加形式绘制曲线<br>
+</p>
+<p>
+Plot3D三维曲线控件继承至Tkinter的Frame控件和Matplotlib的plot3D函数，必要时可参阅相关资料。
+</p>
+<p>.</p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">WAV格式音频文件播放控件</h2>
+<p>
+WAV格式音频文件播放控件利用Python自带的音频播放功能，可以播放WAV格式的音频文件，并通过回调函数形式返回当前播放的声音信号数据，用户可编程定义其具体后续显示和信号处理操作，其图形显示效果如下：
+</p>
+<p>
+<img border="0" src="Play001.png" >
+</p>
+<p>
+添加一个按钮控件控制播放的启停，一个曲线控件显示当前的信号，再进行简单的数据流连接后就可以形成一个最基本的WAV文件播放程序：
+</p>
+<p>
+mHBut1=dr.DRHButtonGroupX(win,70,30,200,36,'#000000','#ffffff','Start,Stop',2,12,0)<br>
+import drvi.drviSimpleAudio as ply<br>
+mPlayer2=ply.DRPlay(win,290,30,100,36,'#00aacc','#eeee00')<br>
+mPlot3=dr.DRPlotX(win,70,100,700,240,"",'#003355','#000000',"#ffffff","#00eeff","#ffff00",0,0,0,0,tData,xData)<br>
+mHBut1.addCallBackSingle(mPlayer2.setValueSingle)<br>
+mPlayer2.addCallBack2DX(mPlot3.setValue2DX)<br>
+</p>
+<p>
+其运行效果如下：
+</p>
+<p>
+<img border="0" src="Play002.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个WAV格式音频文件播放控件的命令为:
+</p>
+<p>
+hl=dr.DRPlay(win,x,y,w,h,cb,cf)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。WAV格式音频文件播放控件可以通过回调函数绑定的方式采集的声音数据传递给绑定的回调函数，格式为：
+</p>
+<p>
+hl.addCallBack2DX(setValue2DX)
+</p>
+<p>
+被绑定的回调函数是一个二维曲线数组函数，收到的是当前信号的时间采样间隔和信号数组，其函数形式为：
+</p>
+<p>
+def setValue2DX(self,dx,x):
+</p>
+<p>
+通过回调函数绑定方式，就可以将采集的声音数据传递到回调函数中。
+</p>
+<p>
+WAV格式音频文件播放控件有1个属性函数，可用于启动/停止WAV音频文件播放。
+</p>
+<p>
+hl.setValueSingle(0/1)<br>
+</p>
+<p>.</p>
+</body>
+</html>

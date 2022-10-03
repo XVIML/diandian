@@ -1,0 +1,54 @@
+<html>
+<body>
+<h5 style="color: brown">《DPPython使用说明》——华中科技大学</h5>
+<h2 style="color: blue">标签控件</h2>
+<p>
+标签控件是最常用的GUI控件之一，可用于显示一行文字或数字。标签的图形显示效果如下：
+</p>
+<p>
+<img  src="Label001.png" >
+</p>
+<p>
+在Python程序GUI界面中创建一个标签控件的命令为:
+</p>
+<p>
+hl=dr.DRLabelX(win,x,y,w,h,bg,fg,txt,size)
+</p>
+<p>
+其中hl是创建时用户设定的变量名。标签控件有4个属性函数，可用于设定其所显示的文字或数字，也可以用于获取其所显示的文字或数字。
+</p>
+<p>
+hl.setValueSingle(v)<br>
+hl.setValueString(txt)<br>
+v=hl.getValueSingle()<br>
+txt=hl.getValueString()<br>
+</p>
+<p>
+标签控件是从Tkinter的Label控件继承而来，因此必要时还可以通过Tkinter_Label控件的属性和方法来对其进行装饰。例如，下面语句将已创建的标签控件的边框设为ridge模式。
+</p>
+<p>
+hl.ax.config(relief='ridge')
+</p>
+<p>
+显示效果为：
+</p>
+<p>
+<img src="Label002.png" >
+</p>
+<p>
+对于Tkinter_Label控件，可以通过configure函数配置的外形参数主要有：
+</p>
+<p>
+text='标签'<br>
+bg='#背景颜色码'<br>
+fg='#文本颜色码'<br>
+relief='边框的3D样式名'(flat、sunken、raised、groove、ridge、solid)<br>
+bd=边框宽度点数<br>
+font=('字体名',字体点数)<br>
+</p>
+<p>
+更多有关Tkinter_Label控件的详细用法请参阅Tkinter文献。
+</p>
+<p>.</p>
+</body>
+</html>
