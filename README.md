@@ -28,5 +28,7 @@ Below are codes of the WAV player, not so much comparing to its functions.
 ![DRVIExample_PlayCode](https://user-images.githubusercontent.com/9141129/193714957-97e855ee-7018-4cf9-aec5-6380d36eb1d2.png)
 
 
-Whish you like it. Any suggestions are welcomed.
+Whish you like it. 
+
+And any suggestions are welcomed.
 
