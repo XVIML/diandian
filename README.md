@@ -16,7 +16,13 @@ DRVI and DRPython are also depended on six third packages. So you also need to i
   pip install PyAudio
   
   pip install Pyserial
-  
+
+If you want to analysis audio data in a MP3 or MP4 file, you need to download and install an exectable ffmpeg, and change the ffmpeg.txt file's content to your ffmpeg path, like.
+
+d:\ffmpeg511
+
+Original python only support WAV format of audio file.
+
 To easy for useing of the drvi package, we write a APP designer and some examples here.
 
 DRPythonIDE.py: an APP designer, you can layout a virtual instrument style GUI by drag, and then export it to python codes for quick design.   
