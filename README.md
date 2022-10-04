@@ -3,7 +3,7 @@ DRVI is a python GUI package that is based on Tkinter, it contains a group of vi
 
 pip install drvi
 
-DRVI and DRPython are also depended on six third packages. So you also need to install them.
+DRVI and DRPython are also depended on six third packages. So you also need to install them yourself.
 
   pip install numpy
   
@@ -17,18 +17,16 @@ DRVI and DRPython are also depended on six third packages. So you also need to i
   
   pip install Pyserial
 
-If you want to analysis audio data in a MP3 or MP4 file, you need to download and install an exectable ffmpeg, and change the ffmpeg.txt file's content to your ffmpeg path, like.
+Original python only support WAV format of audio file. If you want to analysis audio data in MP3 or MP4 files, you need to download and install an exectable ffmpeg, and change the ffmpeg.txt file's content to your ffmpeg path, like.
 
 d:\ffmpeg511
 
-Original python only support WAV format of audio file.
 
 To easy for useing of the drvi package, we write a APP designer and some examples here.
 
 DRPythonIDE.py: an APP designer, you can layout a virtual instrument style GUI by drag, and then export it to python codes for quick design.   
 
 ![DRPython](https://user-images.githubusercontent.com/9141129/193712249-f4e485d4-8567-4165-b5cd-c8a81e3a53de.gif)
-
 
 
 And some examples of virtual instrument style APP that is designed by drvi package are also aviable here.
