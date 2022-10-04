@@ -98,37 +98,50 @@ def listCOM():
     k=msgbox.askyesno('COM List',S)
 
 
+
 def mp3ToWav():
-    global winDir
+    global winDir,ffmpegPath
     mfile=filedialog.askopenfilename(title="Select Files",filetypes=(("mp3 files", "*.mp3"),("all files", "*.*")))
     if not mfile: return 1
     mfile1=mfile.replace('.mp3','.wav');    
-    fPath=winDir+'\\ffmpeg511'
+    if ffmpegPath.find(':') ==-1:
+        fPath=winDir+'\\'+ffmpegPath
+    else:
+        fPath=ffmpegPath
     abc=mPlayer.DRffmpeg(fPath)
     abc.getWavFile(mfile,mfile1)    
 
 def mp4ToWav():
-    global winDir
+    global winDir,ffmpegPath
     mfile=filedialog.askopenfilename(title="Select Files",filetypes=(("mp4 files", "*.mp4"),("all files", "*.*")))
     if not mfile: return 1
-    mfile1=mfile.replace('.mp4','.wav');    
-    fPath=winDir+'\\ffmpeg511'
+    mfile1=mfile.replace('.mp4','.wav');
+    if ffmpegPath.find(':') ==-1:
+        fPath=winDir+'\\'+ffmpegPath
+    else:
+        fPath=ffmpegPath
     abc=mPlayer.DRffmpeg(fPath)
     abc.getWavFile(mfile,mfile1)    
 
 def mp4Play():
-    global winDir
+    global winDir,ffmpegPath
     mfile=filedialog.askopenfilename(title="Select Files",filetypes=(("mp4 files", "*.mp4"),("all files", "*.*")))
     if not mfile: return 1
-    fPath=winDir+'\\ffmpeg511'
+    if ffmpegPath.find(':') ==-1:
+        fPath=winDir+'\\'+ffmpegPath
+    else:
+        fPath=ffmpegPath
     abc=mPlayer.DRffmpeg(fPath)
     abc.playVideoX(mfile,480,320,0)
 
 def mp3Play():
-    global winDir
+    global winDir,ffmpegPath
     mfile=filedialog.askopenfilename(title="Select Files",filetypes=(("mp3 files", "*.mp3"),("all files", "*.*")))
     if not mfile: return 1
-    fPath=winDir+'\\ffmpeg511'
+    if ffmpegPath.find(':') ==-1:
+        fPath=winDir+'\\'+ffmpegPath
+    else:
+        fPath=ffmpegPath
     abc=mPlayer.DRffmpeg(fPath)
     abc.playVideoX(mfile,480,320,0)
     
@@ -1185,6 +1198,12 @@ tvItem.selection_set(0)
 #logo
 mFirst=0
 mLogo=dr.DRIcon(win,(wWin-472)/2,(hWin-200)/2,472,110,'imgs/drpython.png',400)
+
+text_file = open('ffmpeg.txt',"r",encoding='utf-8')
+ffmpegPath=text_file.read()
+text_file.close()
+ffmpegPath=ffmpegPath.replace('\n\n','') #Del \n
+ffmpegPath=ffmpegPath.replace('\n','') #Del \n
 
 #==Main Start============================================
 win.mainloop()
