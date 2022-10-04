@@ -1,11 +1,17 @@
 # DRVI
-DRVI is a python package, it contains a group of virtual instrument widgets, which is based on Tkinter and Matplotlib. You can install it by:
+DRVI is a python GUI package that is based on Tkinter, it contains a group of virtual instrument widgets. You can install it by:
 
 pip install drvi
 
+DRVI and DRPython are also depended on six third packages. So you also need to install them.
+  pip install numpy
+  pip install scipy
+  pip install matplotlib
+  pip install simpleaudio
+  pip install PyAudio
+  pip install Pyserial
+  
 To easy for useing of the drvi package, we write a APP designer and some examples here.
-
-
 
 DRPythonIDE.py: an APP designer, you can layout a virtual instrument style GUI by drag, and then export it to python codes for quick design.   
 
