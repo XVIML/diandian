@@ -41,6 +41,8 @@ def setValueSingle(v):
     [Fs,N,CH,data]=sa.readWavFile(mfile)
     if CH==2:data=data[:,0] #Stero, use channel one
     mPlotWave.setValue2DX(1/Fs,data)
+    T=N/Fs
+    mPlotWave.setXlim(0,T)    
     myWorking()
 
 def setLength(v):
@@ -78,19 +80,36 @@ def myWorking():
     if K<0: K=0    
     xdata=data[K:K+mLength]
     mPlotWave1.setValue2DX(1/Fs,xdata)
+    T=mLength/Fs
+    mPlotWave1.setXlim(0,T)        
 
 def setPlay(v):
-    global Fs,N,CH,data,mPosition,mLength
+    global Fs,N,CH,data,mPosition,mLength,pObj;
     if N==0: return;
-    sa.play(CH,Fs,data,0) 
-
+    if v==0: pObj=sa.play(1,Fs,data,0)
+    if v==1: pObj.stop()
+    
 def setAmplify(v):
     global Fs,N,CH,data,xdata,mPosition,mLength
     s='0.0 Hz'
     T=dsp.findPeriod(Fs,len(xdata),xdata)
     if T>0: s=format(1/T,'.2f')+' Hz'
     mTxt1.setValueString(s)
-        
+
+def setTime(v):
+    global Fs,N,CH,data,xdata,mPosition,mLength,pObj;
+    if Fs==0:
+        mTimer2.setValueSingle(1)
+        return;
+    T=N/Fs
+    v=v/1000
+    if v>T:
+        pObj.stop()
+        mTimer2.setValueSingle(1)
+    mPosition=100*v/T
+    mHSlider1.setValueSingle(mPosition)
+    myWorking()
+
 
 #==Main Window=====================
 win= tk.Tk()
@@ -109,25 +128,33 @@ win.config(bg="#ddeeee")
 win.wm_title('Waveform Analysis of WAV File')
 
 #==Layout of controls=====================
-mInfo1=dr.DRInfo(win,540*wRate,25*hRate,40*wRate,40*hRate,'#00bbbb','#000000','#ffffff','DRPython.pdf')
-dr.DRLabelX(win,20*wRate,25*hRate,500*wRate,40*hRate,'#440000','#ffffff','Waveform Analysis of WAV',20)
-mBut1=dr.DRButton(win,20*wRate,80*hRate,100*wRate,36*hRate,'#003355','#eeee00','Open',101)
+dr.DRLabelX(win,20*wRate,25*hRate,500*wRate,40*hRate,'#440000','#ffffff','Waveform Analysis of WAV File',20)
+mBut1=dr.DRButton(win,660*wRate,40*hRate,100*wRate,36*hRate,'#003355','#eeee00','Open File',101)
+mOMenu1=dr.DROptionMenu(win,770*wRate,40*hRate,100*wRate,36*hRate,'#003355','#eeee00','1024,2048,4096,8192,16384,32768,64535',3)
 mPlotWave=dr.DRPlotX(win,20*wRate,130*hRate,1060*wRate,260*hRate,'','#113344','#000000','#ffffff','#00eeff','#ffff00',0,0,-1,1,0,0)
 mPlotWave1=dr.DRPlotX(win,20*wRate,380*hRate,1060*wRate,260*hRate,'','#113344','#000000','#ffffff','#00eeff','#ffff00',0,0,-1,1,0,0)
-mOMenu1=dr.DROptionMenu(win,130*wRate,80*hRate,100*wRate,36*hRate,'#003355','#eeee00','1024,2048,4096,8192,16384,32768,64535',3)
-mHSlider1=dr.DRHSlider(win,310*wRate,82*hRate,590*wRate,30*hRate,'#444444','#004466','#008822',8,20,0,100,0)
-mBut2=dr.DRButton(win,270*wRate,86*hRate,30*wRate,24*hRate,'#003355','#eeee00','<<',201)
-mBut3=dr.DRButton(win,900*wRate,86*hRate,30*wRate,24*hRate,'#003355','#eeee00','>>',202)
-mBut4=dr.DRButton(win,970*wRate,80*hRate,100*wRate,36*hRate,'#005533','#eeee00','Play',101)
-mBut9=dr.DRButton(win,930*wRate,370*hRate,100*wRate,26*hRate,'#005533','#ffffff','Calculate',400)
+
+mHSlider1=dr.DRHSlider(win,50*wRate,90*hRate,1010*wRate,30*hRate,'#444444','#004466','#008822',8,20,0,100,0)
+
+mBut2=dr.DRButton(win,20*wRate,95*hRate,20*wRate,24*hRate,'#003355','#eeee00','<<',201)
+mBut3=dr.DRButton(win,1060*wRate,95*hRate,20*wRate,24*hRate,'#003355','#eeee00','>>',202)
+
+mHBut5=dr.DRHButtonGroupX(win,880*wRate,40*hRate,200*wRate,36*hRate,'#003355','#ffffff','Play,Stop',2,12,0)
+mHBut5.addCallBackSingle(setPlay)
+
+mBut9=dr.DRButton(win,960*wRate,370*hRate,60*wRate,26*hRate,'#005533','#ffffff','Compute',400)
 mTxt1=dr.DRLabelX(win,860*wRate,410*hRate,180*wRate,30*hRate,'#000000','#00ffaa','0.0 Hz',14)
+
+mTimer2=dr.DRTimerX(win,580*wRate,40*hRate,50*wRate,36*hRate,'#000000','#ffff00',100,11)
+mTimer2.addCallBackSingle(setTime)
+mHBut5.addCallBackSingle(mTimer2.setValueSingle)
+
 
 mOMenu1.addCallBackSingle(setLength)
 mBut1.addCallBackSingle(setValueSingle)
 mHSlider1.addCallBackSingle(setPos)
 mBut2.addCallBackSingle(setMove)
 mBut3.addCallBackSingle(setMove)
-mBut4.addCallBackSingle(setPlay)
 mBut9.addCallBackSingle(setAmplify);
 
 #==========================================
@@ -138,6 +165,7 @@ N=0
 CH=0
 data=0
 xdata=0
+pObj=0
 
 #==Main Loop=====================
 win.mainloop()
