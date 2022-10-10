@@ -1,7 +1,9 @@
 # DRVI
 DRVI is a python GUI package that is based on Tkinter, it contains a group of virtual instrument widgets. You can install it by:
 
-pip install drvi
+pip install drvi-0.0.3-cp37-none-any.whl
+
+where cp37 means which is suitable for Python3.7. If you use Python 3.9, please install drvi-0.0.8-cp39-none-any.whl.
 
 DRVI and DRPython are also depended on six third packages. So you also need to install them yourself.
 
