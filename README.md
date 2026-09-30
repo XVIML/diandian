@@ -4,6 +4,9 @@ You can locate the `.whl` package on PyPI by searching for the keyword "drvi". D
 
 <img width="2270" height="1237" alt="image" src="https://github.com/user-attachments/assets/3803794a-ead5-44a5-abab-70f8a397fed2" />
 
+
+
+
 Usually, it fails to find a suitable version for installation, and I’m not sure why:
 
 pip install drvi
@@ -11,6 +14,9 @@ pip install drvi
 You will need to download the correct version manually.
 
 <img width="2222" height="1729" alt="image" src="https://github.com/user-attachments/assets/dc8bd8d6-7360-44e5-8491-6d2b34db8265" />
+
+
+
 
 
 Then install it using the command below:
