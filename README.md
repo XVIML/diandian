@@ -20,3 +20,9 @@ pip install pyserial
 
 pip install librosa
 
+
+To try DRVI, download `TestDRVI.zip`, extract it to a local directory, such as 'd:\temp'. And run the included Python scripts. These programs use drvi to build graphical user interfaces.
+
+One example is `Example_Piano`, a virtual piano that generates pure tones, displays their waveforms and spectra, and plays audio.
+
+
