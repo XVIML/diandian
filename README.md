@@ -1,6 +1,19 @@
 DRVI is a collection of virtual instrument widgets built upon Tkinter, NumPy, SciPy and Matplotlib. It also includes an app designer and several demonstration examples.
 
-You can locate the `.whl` package on PyPI by searching for the keyword "drvi". Download the wheel compatible with your Python version, for example `drvi-0.9.3-py311-none-any.whl`, then install it using the command below:
+You can locate the `.whl` package on PyPI by searching for the keyword "drvi". Download the wheel compatible with your Python version, for example `drvi-0.9.3-py311-none-any.whl`
+
+<img width="2270" height="1237" alt="image" src="https://github.com/user-attachments/assets/3803794a-ead5-44a5-abab-70f8a397fed2" />
+
+Usually, it fails to find a suitable version for installation, and I’m not sure why:
+
+pip install drvi
+
+You will need to download the correct version manually.
+
+<img width="2222" height="1729" alt="image" src="https://github.com/user-attachments/assets/dc8bd8d6-7360-44e5-8491-6d2b34db8265" />
+
+
+Then install it using the command below:
 
 pip install drvi-0.9.3-py311-none-any.whl
 
@@ -20,8 +33,7 @@ pip install pyserial
 
 pip install librosa
 
-
-To try DRVI, download `TestDRVI.zip`, extract it to a local directory, such as 'd:\temp'. And run the included Python scripts. These programs use drvi to build graphical user interfaces.
+To try DRVI, download `TestDRVI.zip`, extract it to a local directory, such as 'd:\temp'. And run the included Python scripts. These programs use 'drvi' to build graphical user interfaces.
 
 One example is `Example_Piano`, a virtual piano that generates pure tones, displays their waveforms and spectra, and plays audio.
 
